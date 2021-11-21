@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SpinnerService } from './services/spinner.service';
 import { UserService } from './services/user.service';
+declare var $: any;
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,8 @@ export class AppComponent {
   }
 
   ngOnInit() {
-   
+    $(document).ready(function() {
+      $('[data-toggle="tooltip"]').tooltip();
+    })
   }
 }
